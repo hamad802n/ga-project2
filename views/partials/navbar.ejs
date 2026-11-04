@@ -2,6 +2,9 @@
     
     <a href="/">Homepage</a>
     <% if (user){ %>
+    <% if (user.role === "admin"){ %>
+    <a href="/hotels/new">Add Hotel</a>
+    <% } %>
     <a href="/auth/sign-out">Logout</a>
 
     <% } else{ %>
