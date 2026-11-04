@@ -1,0 +1,109 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="hotel-erd" name="Hotel ERD">
+    <mxGraphModel dx="1184" dy="606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="user" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" value="User" vertex="1">
+          <mxGeometry height="134" width="280" x="20" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="user-id" parent="user" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontStyle=1;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="PK  _id : ObjectId" vertex="1">
+          <mxGeometry height="26" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="user-username" parent="user" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="username : String (required, unique)" vertex="1">
+          <mxGeometry height="26" width="280" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="user-password" parent="user" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="password : String (required, hashed)" vertex="1">
+          <mxGeometry height="26" width="280" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="user-role" parent="user" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="role : String (guest or admin)" vertex="1">
+          <mxGeometry height="26" width="280" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="booking" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;" value="Booking" vertex="1">
+          <mxGeometry height="264" width="300" x="440" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="booking-id" parent="booking" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontStyle=1;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="PK  _id : ObjectId" vertex="1">
+          <mxGeometry height="26" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="booking-user" parent="booking" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontStyle=2;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="FK  user : ObjectId (ref User)" vertex="1">
+          <mxGeometry height="26" width="300" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="booking-hotel" parent="booking" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontStyle=2;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="FK  hotel : ObjectId (ref Hotel)" vertex="1">
+          <mxGeometry height="26" width="300" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="booking-checkin" parent="booking" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="checkIn : Date (required)" vertex="1">
+          <mxGeometry height="26" width="300" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="booking-checkout" parent="booking" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="checkOut : Date (required)" vertex="1">
+          <mxGeometry height="26" width="300" y="134" as="geometry" />
+        </mxCell>
+        <mxCell id="05UjngVeMNR6RB4WbL---3" edge="1" parent="booking" source="user" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmany;rounded=0;defaultLabelBackgroundColor=page;exitX=1.002;exitY=0.154;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="170" y="250" as="sourcePoint" />
+            <mxPoint y="60" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="booking-guests" parent="booking" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="guests : Number (min 1)" vertex="1">
+          <mxGeometry height="26" width="300" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="booking-rooms" parent="booking" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="rooms : Number (min 1)" vertex="1">
+          <mxGeometry height="26" width="300" y="186" as="geometry" />
+        </mxCell>
+        <mxCell id="booking-total" parent="booking" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="totalPrice : Number" vertex="1">
+          <mxGeometry height="26" width="300" y="212" as="geometry" />
+        </mxCell>
+        <mxCell id="booking-status" parent="booking" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="status : String (pending, confirmed, cancelled)" vertex="1">
+          <mxGeometry height="26" width="300" y="238" as="geometry" />
+        </mxCell>
+        <mxCell id="hotel" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;" value="Hotel" vertex="1">
+          <mxGeometry height="316" width="280" x="860" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="hotel-id" parent="hotel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontStyle=1;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="PK  _id : ObjectId" vertex="1">
+          <mxGeometry height="26" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hotel-name" parent="hotel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="name : String (required)" vertex="1">
+          <mxGeometry height="26" width="280" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="hotel-city" parent="hotel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="city : String (required)" vertex="1">
+          <mxGeometry height="26" width="280" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="hotel-country" parent="hotel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="country : String (required)" vertex="1">
+          <mxGeometry height="26" width="280" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="hotel-address" parent="hotel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="address : String" vertex="1">
+          <mxGeometry height="26" width="280" y="134" as="geometry" />
+        </mxCell>
+        <mxCell id="hotel-description" parent="hotel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="description : String" vertex="1">
+          <mxGeometry height="26" width="280" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="hotel-image" parent="hotel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="image : String" vertex="1">
+          <mxGeometry height="26" width="280" y="186" as="geometry" />
+        </mxCell>
+        <mxCell id="hotel-price" parent="hotel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="pricePerNight : Number (min 0)" vertex="1">
+          <mxGeometry height="26" width="280" y="212" as="geometry" />
+        </mxCell>
+        <mxCell id="hotel-rating" parent="hotel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="rating : Number (1 to 5)" vertex="1">
+          <mxGeometry height="26" width="280" y="238" as="geometry" />
+        </mxCell>
+        <mxCell id="hotel-amenities" parent="hotel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="amenities : [String]" vertex="1">
+          <mxGeometry height="26" width="280" y="264" as="geometry" />
+        </mxCell>
+        <mxCell id="hotel-owner" parent="hotel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=8;fontStyle=2;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="FK  owner : ObjectId (ref User)" vertex="1">
+          <mxGeometry height="26" width="280" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="05UjngVeMNR6RB4WbL---4" edge="1" parent="1" source="hotel-country" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;defaultLabelBackgroundColor=page;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="booking" value="">
+          <mxGeometry height="100" relative="1" width="100" x="0.4337" as="geometry">
+            <mxPoint x="550" y="330" as="sourcePoint" />
+            <mxPoint x="780" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="05UjngVeMNR6RB4WbL---5" edge="1" parent="1" source="user" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;defaultLabelBackgroundColor=page;entryX=-0.006;entryY=0.07;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.844;exitY=0.046;exitDx=0;exitDy=0;exitPerimeter=0;" target="hotel" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="130" y="50.0559999999999" as="sourcePoint" />
+            <mxPoint x="908.6800000000001" y="40.000000000000085" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

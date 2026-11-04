@@ -10,6 +10,22 @@ router.get('/new', isSignedIn, isAdmin, (req,res)=>{
 })
 
 
+router.post('/', isSignedIn, isAdmin, async (req,res)=>{
+    const {name, city, country, address, description, image, pricePerNight, rating, amenities} = req.body // Destructuring
+    const createdHotel = await Hotel.create({
+        name: name,
+        city: city,
+        country: country,
+        address: address,
+        description: description,
+        image: image,
+        pricePerNight: pricePerNight,
+        rating: rating,
+        amenities: amenities,
+        owner: req.session.user._id
+    })
+    res.redirect('/')
+})
 
 
 module.exports = router

@@ -6,9 +6,43 @@
     <title>Create Hotel</title>
 </head>
 <body>
-   
+    <%- include('../partials/navbar') %>
 
-    
+    <h1>Create Hotel</h1>
+    <form action="/hotels" method="post">
+
+        <label for="name">Name:</label>
+        <input name="name" id="name" type="text" required>
+
+        <label for="city">City:</label>
+        <input name="city" id="city" type="text" required>
+
+        <label for="country">Country:</label>
+        <input name="country" id="country" type="text" required>
+
+        <label for="address">Address:</label>
+        <input name="address" id="address" type="text">
+
+        <label for="description">Description:</label>
+        <textarea name="description" id="description"></textarea>
+
+        <label for="image">Image URL:</label>
+        <input name="image" id="image" type="text">
+
+        <label for="pricePerNight">Price Per Night:</label>
+        <input name="pricePerNight" id="pricePerNight" type="number" min="0" required>
+
+        <label for="rating">Rating:</label>
+        <input name="rating" id="rating" type="number" min="1" max="5">
+
+        <p>Amenities:</p>
+        <label><input name="amenities" type="checkbox" value="WiFi"> WiFi</label>
+        <label><input name="amenities" type="checkbox" value="Pool"> Pool</label>
+        <label><input name="amenities" type="checkbox" value="Gym"> Gym</label>
+        <label><input name="amenities" type="checkbox" value="Parking"> Parking</label>
+        <label><input name="amenities" type="checkbox" value="Breakfast"> Breakfast</label>
+
+        <button>Create Hotel</button>
 
     </form>
 </body>
