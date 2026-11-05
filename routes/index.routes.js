@@ -1,7 +1,9 @@
 const router = require("express").Router()
+const Hotel = require('../models/Hotel')
 
 
-router.get('/',(req,res)=>{
-    res.render('homepage.ejs')
+router.get('/', async (req,res)=>{
+    const allHotels = await Hotel.find()
+    res.render('homepage.ejs',{hotels: allHotels})
 })
 module.exports = router;
