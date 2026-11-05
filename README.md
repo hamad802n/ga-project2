@@ -63,6 +63,8 @@ Hotel Booking Management
 | GET | /auth/sign-out | Sign out |
 | GET | /hotels | List all hotels |
 | GET | /hotels/:id | View hotel |
+| GET | /hotels/new | New hotel form (admin) |
+| POST | /hotels | Create hotel (admin) |
 | GET | /bookings | List my bookings |
 | GET | /bookings/new | New booking form |
 | POST | /bookings | Create booking |
