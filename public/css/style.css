@@ -1,0 +1,22 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-bubble {
+    background-color: #d68963;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.nav-bubble a {
+    color: #2b1a12;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.welcome {
+    text-align: center;
+}
