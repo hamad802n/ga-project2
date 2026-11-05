@@ -10,7 +10,13 @@ router.get("/sign-up", (req, res) => {
 });
 
 router.post("/sign-up", async (req, res) => {
-  const userInDatabase = await User.findOne({ username: req.body.username });
+  if (!req.body.username || !req.body.username.trim() || !req.body.password) {
+    return res.send("Username and password are required");
+  }
+
+  const username = req.body.username.trim();
+
+  const userInDatabase = await User.findOne({ username: username });
   if (userInDatabase) {
     return res.send("Username already taken.");
   }
@@ -20,12 +26,9 @@ router.post("/sign-up", async (req, res) => {
   }
 
   const hashedPassword = bcrypt.hashSync(req.body.password, 10);
-  req.body.password = hashedPassword;
 
- 
-
-  //pass username and password here, req.body lets someone sign up with role=admin change that later 
-  const user = await User.create(req.body);
+  // only username and password are saved, so nobody can sign up with role=admin
+  await User.create({ username: username, password: hashedPassword });
   res.redirect("/auth/sign-in");
 });
 
