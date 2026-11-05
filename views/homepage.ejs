@@ -11,14 +11,18 @@
 
     <h1 class="welcome">Welcome to my Website</h1>
 
+    <div class="hotels">
     <% for(let oneHotel of hotels){ %>
-        <h2><%= oneHotel.name %></h2>
-        <% if (oneHotel.image){ %>
-        <img src="<%= oneHotel.image %>" alt="<%= oneHotel.name %>" width="300">
-        <% } %>
-        <p><%= oneHotel.city %>, <%= oneHotel.country %></p>
-        <p>$<%= oneHotel.pricePerNight %> per night</p>
+        <div class="hotel-card">
+            <% if (oneHotel.image){ %>
+            <img src="<%= oneHotel.image %>" alt="<%= oneHotel.name %>">
+            <% } %>
+            <h2><%= oneHotel.name %></h2>
+            <p><%= oneHotel.city %>, <%= oneHotel.country %></p>
+            <p class="price">$<%= oneHotel.pricePerNight %> per night</p>
+        </div>
     <% } %>
+    </div>
 
 </body>
 </html>
