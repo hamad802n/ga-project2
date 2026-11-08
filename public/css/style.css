@@ -306,3 +306,23 @@ nav a:hover {
     margin-top: 20px;
     color: #0b4f5c;
 }
+
+
+/* Sign in and sign up pages */
+
+.no-card {
+    background-color: transparent;
+    box-shadow: none
+    padding: 0;
+}
+
+.auth-switch {
+    text-align: centre;
+    color: #5b7a80;
+    margin: 20px 0 0;
+}
+
+.auth-switch a {
+    colour: #0b4f5c;
+    font-weight: bold;
+}
