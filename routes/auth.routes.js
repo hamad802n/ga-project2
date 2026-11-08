@@ -27,7 +27,7 @@ router.post("/sign-up", async (req, res) => {
 
   const hashedPassword = bcrypt.hashSync(req.body.password, 10);
 
-  // only username and password are saved, so nobody can sign up with role=admin
+  
   await User.create({ username: username, password: hashedPassword });
   res.redirect("/auth/sign-in");
 });

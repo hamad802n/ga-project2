@@ -3,7 +3,6 @@ const isSignedIn = require('../middleware/is-signed-in')
 const isAdmin = require('../middleware/is-admin')
 const Hotel = require('../models/Hotel')
 
-// Create routes
 
 router.get('/new', isSignedIn, isAdmin, (req,res)=>{
     res.render('hotels/create-hotel.ejs')
@@ -11,7 +10,7 @@ router.get('/new', isSignedIn, isAdmin, (req,res)=>{
 
 
 router.post('/', isSignedIn, isAdmin, async (req,res)=>{
-    const {name, city, country, address, description, image, pricePerNight, rating, amenities} = req.body // Destructuring
+    const {name, city, country, address, description, image, pricePerNight, rating, amenities} = req.body 
     const createdHotel = await Hotel.create({
         name: name,
         city: city,

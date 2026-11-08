@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Hotel</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+
+    <h1>Book a Hotel</h1>
+    <form action="/bookings" method="post">
+
+        <label for="hotel">Hotel:</label>
+        <select name="hotel" id="hotel" required>
+            <% for(let oneHotel of hotels){ %>
+            <option value="<%= oneHotel._id %>"><%= oneHotel.name %> - $<%= oneHotel.pricePerNight %> per night</option>
+            <% } %>
+        </select>
+
+        <label for="checkIn">Check In:</label>
+        <input name="checkIn" id="checkIn" type="date" required>
+
+        <label for="checkOut">Check Out:</label>
+        <input name="checkOut" id="checkOut" type="date" required>
+
+        <label for="guests">Guests:</label>
+        <input name="guests" id="guests" type="number" min="1" value="1" required>
+
+        <label for="rooms">Rooms:</label>
+        <input name="rooms" id="rooms" type="number" min="1" value="1" required>
+
+        <button>Book Now</button>
+
+    </form>
+</body>
+</html>
