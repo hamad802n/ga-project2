@@ -197,26 +197,39 @@ nav a:hover {
     margin: 0 auto;
 }
 
-.booking-form {
-    max-width: 440px;
-    margin: 0 auto;
-}
-
-.booking-form label {
+.form-card label {
     display: block;
     font-weight: bold;
-    margin: 12px 0 4px;
+    margin: 16px 0 6px;
 }
 
-.booking-form input,
-.booking-form select {
+.form-card input,
+.form-card select {
     width: 100%;
     box-sizing: border-box;
-    padding: 8px;
+    padding: 10px 12px;
+    border: 1px solid #c9d8da;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #0b3c46;
+    background-color: #ffffff;
 }
 
-.booking-form .btn {
-    margin-top: 16px;
+.form-card input:focus,
+.form-card select:focus {
+    outline: 2px solid #0b4f5c;
+    border-color: #0b4f5c;
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.form-row div {
+    flex: 1;
+    min-width: 0;
 }
 
 .btn {
@@ -237,6 +250,11 @@ nav a:hover {
 
 .btn:hover {
     background-color: #08404a;
+}
+
+.btn-full {
+    width: 100%;
+    margin-top: 24px;
 }
 
 .btn-outline {

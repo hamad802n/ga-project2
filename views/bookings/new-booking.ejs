@@ -10,28 +10,40 @@
     <%- include('../partials/navbar') %>
 
     <h1 class="page-title">Book a Hotel</h1>
-    <form class="booking-form" action="/bookings" method="post">
+    <p class="page-subtitle">Pick your hotel and dates</p>
 
-        <label for="hotel">Hotel:</label>
+    <form class="form-card" action="/bookings" method="post">
+
+        <label for="hotel">Hotel</label>
         <select name="hotel" id="hotel" required>
             <% for(let oneHotel of hotels){ %>
             <option value="<%= oneHotel._id %>"><%= oneHotel.name %> - $<%= oneHotel.pricePerNight %> per night</option>
             <% } %>
         </select>
 
-        <label for="checkIn">Check In:</label>
-        <input name="checkIn" id="checkIn" type="date" required>
+        <div class="form-row">
+            <div>
+                <label for="checkIn">Check In</label>
+                <input name="checkIn" id="checkIn" type="date" required>
+            </div>
+            <div>
+                <label for="checkOut">Check Out</label>
+                <input name="checkOut" id="checkOut" type="date" required>
+            </div>
+        </div>
 
-        <label for="checkOut">Check Out:</label>
-        <input name="checkOut" id="checkOut" type="date" required>
+        <div class="form-row">
+            <div>
+                <label for="guests">Guests</label>
+                <input name="guests" id="guests" type="number" min="1" value="1" required>
+            </div>
+            <div>
+                <label for="rooms">Rooms</label>
+                <input name="rooms" id="rooms" type="number" min="1" value="1" required>
+            </div>
+        </div>
 
-        <label for="guests">Guests:</label>
-        <input name="guests" id="guests" type="number" min="1" value="1" required>
-
-        <label for="rooms">Rooms:</label>
-        <input name="rooms" id="rooms" type="number" min="1" value="1" required>
-
-        <button class="btn">Book Now</button>
+        <button class="btn btn-full">Book Now</button>
 
     </form>
 </body>
