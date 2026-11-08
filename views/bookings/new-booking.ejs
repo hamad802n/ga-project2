@@ -6,11 +6,11 @@
     <title>Book a Hotel</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
+<body class="page">
     <%- include('../partials/navbar') %>
 
-    <h1>Book a Hotel</h1>
-    <form action="/bookings" method="post">
+    <h1 class="page-title">Book a Hotel</h1>
+    <form class="booking-form" action="/bookings" method="post">
 
         <label for="hotel">Hotel:</label>
         <select name="hotel" id="hotel" required>
@@ -31,7 +31,7 @@
         <label for="rooms">Rooms:</label>
         <input name="rooms" id="rooms" type="number" min="1" value="1" required>
 
-        <button>Book Now</button>
+        <button class="btn">Book Now</button>
 
     </form>
 </body>

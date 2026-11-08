@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="page">
+    <%- include('../partials/navbar') %>
+
+    <h1 class="page-title">Booking Details</h1>
+    <p class="page-subtitle">Everything about your stay</p>
+
+    <div class="form-card">
+        <span class="status status-<%= booking.status %>"><%= booking.status %></span>
+        <h2><%= booking.hotel.name %></h2>
+        <p class="location"><%= booking.hotel.city %>, <%= booking.hotel.country %></p>
+
+        <p class="booking-info"><span>Check In</span><span><%= booking.checkIn.toDateString() %></span></p>
+        <p class="booking-info"><span>Check Out</span><span><%= booking.checkOut.toDateString() %></span></p>
+        <p class="booking-info"><span>Guests</span><span><%= booking.guests %></span></p>
+        <p class="booking-info"><span>Rooms</span><span><%= booking.rooms %></span></p>
+        <p class="booking-info"><span>Price Per Night</span><span>$<%= booking.hotel.pricePerNight %></span></p>
+        <p class="booking-info"><span>Total</span><span class="total">$<%= booking.totalPrice %></span></p>
+
+        <div class="actions">
+            <a class="btn btn-outline" href="/bookings/<%= booking._id %>/edit">Edit Booking</a>
+            <form action="/bookings/<%= booking._id %>?_method=DELETE" method="post">
+                <button class="btn btn-danger">Cancel Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <a class="back-link" href="/bookings">Back to My Bookings</a>
+</body>
+</html>

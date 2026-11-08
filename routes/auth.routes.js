@@ -4,7 +4,6 @@ const User = require("../models/User.js");
 const bcrypt = require("bcrypt");
 
 
-// Sign up routes
 router.get("/sign-up", (req, res) => {
   res.render("auth/sign-up.ejs");
 });
@@ -34,7 +33,6 @@ router.post("/sign-up", async (req, res) => {
 
 
 
-// Sign in routes
 router.get("/sign-in", (req, res) => {
   res.render("auth/sign-in.ejs");
 });

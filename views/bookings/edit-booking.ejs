@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Booking</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="page">
+    <%- include('../partials/navbar') %>
+
+    <h1 class="page-title">Edit Booking</h1>
+    <form class="booking-form" action="/bookings/<%= booking._id %>?_method=PUT" method="post">
+
+        <label for="hotel">Hotel:</label>
+        <select name="hotel" id="hotel" required>
+            <% for(let oneHotel of hotels){ %>
+            <option value="<%= oneHotel._id %>" <%= oneHotel._id.equals(booking.hotel) ? 'selected' : '' %>><%= oneHotel.name %> - $<%= oneHotel.pricePerNight %> per night</option>
+            <% } %>
+        </select>
+
+        <label for="checkIn">Check In:</label>
+        <input name="checkIn" id="checkIn" type="date" value="<%= booking.checkIn.toISOString().slice(0,10) %>" required>
+
+        <label for="checkOut">Check Out:</label>
+        <input name="checkOut" id="checkOut" type="date" value="<%= booking.checkOut.toISOString().slice(0,10) %>" required>
+
+        <label for="guests">Guests:</label>
+        <input name="guests" id="guests" type="number" min="1" value="<%= booking.guests %>" required>
+
+        <label for="rooms">Rooms:</label>
+        <input name="rooms" id="rooms" type="number" min="1" value="<%= booking.rooms %>" required>
+
+        <button class="btn">Update Booking</button>
+
+    </form>
+</body>
+</html>
