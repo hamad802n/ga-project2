@@ -6,22 +6,15 @@
     <title>Sign In</title>
     <link rel="stylesheet" href="/css/style.css" />
   </head>
-  <body class="pages">
+  <body class="page">
     <%- include('../partials/navbar') %>
-
-    <h1 class="page-tittle">Welcome Back</h1>
-    <p class="page-subtitle">Sign in to book your next stay</p>
-
-    <form class="from-card no-card" action="/auth/sign-in" method="POST">
-      <label for="username">Username</label>
+    <h1 class="page-title">Sign in</h1>
+    <form class="auth-form" action="/auth/sign-in" method="POST">
+      <label for="username">Username:</label>
       <input type="text" name="username" id="username" />
-
-      <label for="password">Password</label>
+      <label for="password">Password:</label>
       <input type="password" name="password" id="password" />
-
-      <button class="btn btn-ful" type="submit">Sign in</button>
-
-      <p class="auth-switch">Don't have an account? <a href="/auth/sign-up">Sign up</a></p>
+      <button class="btn" type="submit">Sign in</button>
     </form>
   </body>
 </html>

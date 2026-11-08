@@ -8,23 +8,15 @@
   </head>
   <body class="page">
     <%- include('../partials/navbar') %>
-
-    <h1 class="page-title">Create an Account</h1>
-    <p class="page-subtitel">Join HS Hotels and start booking</p>
-
-    <form class="form-card no_card" action="/auth/sign-up" method="post">
-      <label for="username">Username</label>
+    <h1 class="page-title">Create a new account!</h1>
+    <form class="auth-form" action="/auth/sign-up" method="post">
+      <label for="username">Username:</label>
       <input type="text" name="username" id="username" />
-
-      <label for="password">Password</label>
+      <label for="password">Password:</label>
       <input type="password" name="password" id="password" />
-
-      <label for="confirmPassword">Confirm Password</label>
+      <label for="confirmPassword">Confirm Password:</label>
       <input type="password" name="confirmPassword" id="confirmPassword" />
-
-      <button class="bnt btn-full" type="submit">Sign up</button>
-
-      <p class="auth-switch">Already have an account? <a href="/auth/sign-in">Sign in</a></p>
+      <button class="btn" type="submit">Sign up</button>
     </form>
   </body>
 </html>
