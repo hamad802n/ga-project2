@@ -21,7 +21,7 @@
         <select name="country" id="country">
             <option value="">All locations</option>
             <% for(let oneCountry of countries){ %>
-            <option value="<%= oneCountry %>"><%= oneCountry %></option>
+            <option value="<%= oneCountry %>" <%= oneCountry === selectedCountry ? 'selected' : '' %>><%= oneCountry %></option>
             <% } %>
         </select>
         <button class="btn">Filter</button>
