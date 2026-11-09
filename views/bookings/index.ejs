@@ -33,6 +33,13 @@
             <p class="booking-info"><span>Total</span><span class="total">$<%= oneBooking.totalPrice %></span></p>
 
             <a class="btn" href="/bookings/<%= oneBooking._id %>">See Details</a>
+
+            <div class="actions">
+                <a class="btn btn-outline" href="/bookings/<%= oneBooking._id %>/edit">Edit</a>
+                <form action="/bookings/<%= oneBooking._id %>?_method=DELETE" method="post">
+                    <button class="btn btn-danger">Cancel</button>
+                </form>
+            </div>
         </div>
     <% } %>
     </div>
