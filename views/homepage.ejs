@@ -25,6 +25,9 @@
             <h2><%= oneHotel.name %></h2>
             <p><%= oneHotel.city %>, <%= oneHotel.country %></p>
             <p class="price">$<%= oneHotel.pricePerNight %> per night</p>
+            <% if (user && user.role === "admin"){ %>
+            <a class="btn btn-outline edit-hotel" href="/hotels/<%= oneHotel._id %>/edit">Edit Hotel</a>
+            <% } %>
         </div>
     <% } %>
     </div>

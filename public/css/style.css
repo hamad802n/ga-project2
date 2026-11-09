@@ -330,3 +330,8 @@ nav a:hover {
 .auth-form .btn {
     margin-top: 16px;
 }
+
+.edit-hotel {
+    display: block;
+    margin-top: 12px;
+}

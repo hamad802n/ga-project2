@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Hotel</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+
+    <h1>Edit Hotel</h1>
+    <form action="/hotels/<%= hotel._id %>?_method=PUT" method="post">
+
+        <label for="name">Name:</label>
+        <input name="name" id="name" type="text" value="<%= hotel.name %>" required>
+
+        <label for="city">City:</label>
+        <input name="city" id="city" type="text" value="<%= hotel.city %>" required>
+
+        <label for="country">Country:</label>
+        <input name="country" id="country" type="text" value="<%= hotel.country %>" required>
+
+        <label for="address">Address:</label>
+        <input name="address" id="address" type="text" value="<%= hotel.address %>">
+
+        <label for="description">Description:</label>
+        <textarea name="description" id="description"><%= hotel.description %></textarea>
+
+        <label for="image">Image URL:</label>
+        <input name="image" id="image" type="text" value="<%= hotel.image %>">
+
+        <label for="pricePerNight">Price Per Night:</label>
+        <input name="pricePerNight" id="pricePerNight" type="number" min="0" value="<%= hotel.pricePerNight %>" required>
+
+        <label for="rating">Rating:</label>
+        <input name="rating" id="rating" type="number" min="1" max="5" value="<%= hotel.rating %>">
+
+        <p>Amenities:</p>
+        <% for(let oneAmenity of ["WiFi", "Pool", "Gym", "Parking", "Breakfast"]){ %>
+        <label><input name="amenities" type="checkbox" value="<%= oneAmenity %>" <%= hotel.amenities.includes(oneAmenity) ? 'checked' : '' %>> <%= oneAmenity %></label>
+        <% } %>
+
+        <button>Update Hotel</button>
+
+    </form>
+</body>
+</html>
