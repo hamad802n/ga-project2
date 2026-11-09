@@ -1,7 +1,9 @@
 <nav>
 
     <div class="nav-left">
+        <% if (typeof countries === 'undefined'){ %>
         <a class="nav-home" href="/">Homepage</a>
+        <% } %>
 
         <% if (typeof countries !== 'undefined'){ %>
         <form class="filter" action="/" method="get">
@@ -28,7 +30,7 @@
 
     <% } else{ %>
     <a href="/auth/sign-up">Sign up</a>
-    <a href="/auth/sign-in">Login</a>
+    <a href="/auth/sign-in">Sign in</a>
 
     <% } %>
     </div>
