@@ -2,6 +2,7 @@ const router = require("express").Router()
 const isSignedIn = require('../middleware/is-signed-in')
 const isAdmin = require('../middleware/is-admin')
 const Hotel = require('../models/Hotel')
+const Booking = require('../models/Booking')
 
 
 router.get('/new', isSignedIn, isAdmin, (req,res)=>{
@@ -49,6 +50,13 @@ router.put('/:hotelId', isSignedIn, isAdmin, async (req,res)=>{
         rating: rating,
         amenities: amenities || []
     }, {runValidators: true})
+    res.redirect('/')
+})
+
+
+router.delete('/:hotelId', isSignedIn, isAdmin, async (req,res)=>{
+    await Booking.deleteMany({hotel: req.params.hotelId})
+    await Hotel.findByIdAndDelete(req.params.hotelId)
     res.redirect('/')
 })
 

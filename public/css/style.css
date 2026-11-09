@@ -332,6 +332,7 @@ nav a:hover {
 }
 
 .edit-hotel {
+    width: 100%;
     display: block;
     margin-top: 12px;
 }
