@@ -3,47 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Hotel</title>
+    <title>Add Hotel</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
+<body class="page">
     <%- include('../partials/navbar') %>
 
-    <h1>Create Hotel</h1>
-    <form action="/hotels" method="post">
+    <h1 class="page-title">Add a Hotel</h1>
+    <p class="page-subtitle">Fill in the details of the new hotel</p>
 
-        <label for="name">Name:</label>
-        <input name="name" id="name" type="text" required>
+    <form class="form-card form-wide" action="/hotels" method="post">
 
-        <label for="city">City:</label>
-        <input name="city" id="city" type="text" required>
+        <div class="form-row">
+            <div>
+                <label for="name">Name</label>
+                <input name="name" id="name" type="text" required>
+            </div>
+            <div>
+                <label for="address">Address</label>
+                <input name="address" id="address" type="text">
+            </div>
+        </div>
 
-        <label for="country">Country:</label>
-        <input name="country" id="country" type="text" required>
+        <div class="form-row">
+            <div>
+                <label for="city">City</label>
+                <input name="city" id="city" type="text" required>
+            </div>
+            <div>
+                <label for="country">Country</label>
+                <input name="country" id="country" type="text" required>
+            </div>
+        </div>
 
-        <label for="address">Address:</label>
-        <input name="address" id="address" type="text">
+        <div class="form-row">
+            <div>
+                <label for="pricePerNight">Price Per Night ($)</label>
+                <input name="pricePerNight" id="pricePerNight" type="number" min="0" required>
+            </div>
+            <div>
+                <label for="rating">Rating (1-5)</label>
+                <input name="rating" id="rating" type="number" min="1" max="5">
+            </div>
+            <div>
+                <label for="image">Image URL</label>
+                <input name="image" id="image" type="text" placeholder="/images/your-image.jpg">
+            </div>
+        </div>
 
-        <label for="description">Description:</label>
+        <label for="description">Description</label>
         <textarea name="description" id="description"></textarea>
 
-        <label for="image">Image URL:</label>
-        <input name="image" id="image" type="text">
+        <label>Amenities</label>
+        <div class="amenities">
+            <label><input name="amenities" type="checkbox" value="WiFi"> WiFi</label>
+            <label><input name="amenities" type="checkbox" value="Pool"> Pool</label>
+            <label><input name="amenities" type="checkbox" value="Gym"> Gym</label>
+            <label><input name="amenities" type="checkbox" value="Parking"> Parking</label>
+            <label><input name="amenities" type="checkbox" value="Breakfast"> Breakfast</label>
+        </div>
 
-        <label for="pricePerNight">Price Per Night:</label>
-        <input name="pricePerNight" id="pricePerNight" type="number" min="0" required>
-
-        <label for="rating">Rating:</label>
-        <input name="rating" id="rating" type="number" min="1" max="5">
-
-        <p>Amenities:</p>
-        <label><input name="amenities" type="checkbox" value="WiFi"> WiFi</label>
-        <label><input name="amenities" type="checkbox" value="Pool"> Pool</label>
-        <label><input name="amenities" type="checkbox" value="Gym"> Gym</label>
-        <label><input name="amenities" type="checkbox" value="Parking"> Parking</label>
-        <label><input name="amenities" type="checkbox" value="Breakfast"> Breakfast</label>
-
-        <button>Create Hotel</button>
+        <button class="btn">Add Hotel</button>
 
     </form>
 </body>

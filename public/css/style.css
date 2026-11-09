@@ -210,7 +210,8 @@ nav a:hover {
 }
 
 .form-card input,
-.form-card select {
+.form-card select,
+.form-card textarea {
     width: 100%;
     box-sizing: border-box;
     padding: 10px 12px;
@@ -223,7 +224,8 @@ nav a:hover {
 }
 
 .form-card input:focus,
-.form-card select:focus {
+.form-card select:focus,
+.form-card textarea:focus {
     outline: 2px solid #0b4f5c;
     border-color: #0b4f5c;
 }
@@ -372,4 +374,43 @@ nav a:hover {
 
 .filter .btn:hover {
     background-color: #f4e3c3;
+}
+
+/* Add Hotel page */
+
+.form-card textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.form-card .amenities label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding: 6px 12px;
+    border: 1px solid #c9d8da;
+    border-radius: 20px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.form-card .amenities input {
+    width: auto;
+    margin: 0;
+}
+
+.form-wide {
+    max-width: 800px;
+}
+
+.form-wide .btn {
+    margin-top: 24px;
+    padding: 12px 40px;
 }
