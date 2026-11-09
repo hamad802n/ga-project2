@@ -1,6 +1,21 @@
 <nav>
 
-    <a href="/">Homepage</a>
+    <div class="nav-left">
+        <a class="nav-home" href="/">Homepage</a>
+
+        <% if (typeof countries !== 'undefined'){ %>
+        <form class="filter" action="/" method="get">
+            <label for="country">Location:</label>
+            <select name="country" id="country">
+                <option value="">All locations</option>
+                <% for(let oneCountry of countries){ %>
+                <option value="<%= oneCountry %>" <%= oneCountry === selectedCountry ? 'selected' : '' %>><%= oneCountry %></option>
+                <% } %>
+            </select>
+            <button class="btn">Filter</button>
+        </form>
+        <% } %>
+    </div>
 
     <div class="nav-bubble">
     <% if (user){ %>

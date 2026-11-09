@@ -16,17 +16,6 @@
 
     <h1 class="welcome">HS Hotels</h1>
 
-    <form class="filter" action="/" method="get">
-        <label for="country">Location:</label>
-        <select name="country" id="country">
-            <option value="">All locations</option>
-            <% for(let oneCountry of countries){ %>
-            <option value="<%= oneCountry %>" <%= oneCountry === selectedCountry ? 'selected' : '' %>><%= oneCountry %></option>
-            <% } %>
-        </select>
-        <button class="btn">Filter</button>
-    </form>
-
     <div class="hotels">
     <% for(let oneHotel of hotels){ %>
         <div class="hotel-card">
