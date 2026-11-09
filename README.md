@@ -96,3 +96,60 @@ Hotel Booking Management
 
 
 ## Credits
+
+Mongoose distinct()  
+https://mongoosejs.com/docs/api/model.html#Model.distinct()
+
+Mongoose deleteMany()  
+https://mongoosejs.com/docs/api/model.html#Model.deleteMany()
+
+Mongoose runValidators  
+https://mongoosejs.com/docs/validation.html#update-validators
+
+Express req.query  
+https://expressjs.com/en/5x/api/
+
+JavaScript Date  
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+
+JavaScript toDateString()  
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toDateString
+
+JavaScript toISOString()  
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
+
+JavaScript typeof  
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
+
+JavaScript ternary operator  
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
+
+JavaScript logical OR  
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR
+
+JavaScript trim()  
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim
+
+JavaScript length  
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length
+
+HTML video  
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
+
+HTML input type date  
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date
+
+CSS position  
+https://developer.mozilla.org/en-US/docs/Web/CSS/position
+
+CSS z-index  
+https://developer.mozilla.org/en-US/docs/Web/CSS/z-index
+
+CSS object-fit  
+https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit
+
+CSS box-shadow  
+https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
+
+CSS text-transform  
+https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform
